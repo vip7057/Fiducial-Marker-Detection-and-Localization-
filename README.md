@@ -65,11 +65,21 @@ The following steps outline the methodology used to enhance the robustness and a
 ---
 
 ### 2.3 MobileNet V2 for Image Classification
-- **Objective**: Detect and classify CCC markers using a CNN model (MobileNet V2).
-- **Steps**:
-  1. **Model Selection**: MobileNet V2 was chosen for its lightweight architecture, making it suitable for deployment on resource-constrained devices.
-  2. **Transfer Learning**: Pre-trained MobileNet V2 is fine-tuned using the synthetic dataset. Transfer learning improves the model’s accuracy without requiring large amounts of real-world data.
-  3. **Training Procedure**: Train the model on the synthetic data, using evaluation metrics such as **mean average precision (mAP)** and **accuracy** to measure its performance.
+- **Architecture:**
+  - Efficient: Depth-wise separable convolutions.
+  - Resource-Constrained: Ideal for limited hardware.
+
+- **Transfer Learning:**
+  - Fine-Tuning: Pre-trained on ImageNet.
+  - Issue: Initial overfitting; final fix: Unfreeze only top layers.
+
+- **Training:**
+  - Preprocessing: RGB, 128x128 pixels, normalization.
+  - Model: Added global average pooling, dense layers.
+  - Loss & Optimizer: Binary cross-entropy, Adam.
+
+> MobileNet V2 Architecture.
+> ![mbnetv2](images/arch.png)
 
 ---
 
