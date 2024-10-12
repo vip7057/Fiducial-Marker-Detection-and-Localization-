@@ -85,14 +85,20 @@ The following steps outline the methodology used to enhance the robustness and a
 
 ### 2.4 CCC Marker Detection, Fitting, and Centroid Calculation
 - **Objective**: Accurately detect, filter, and fit ellipses to the contours of CCC markers and calculate the centers of these ellipses.
-- **Steps**:
-  1. **Bounding Box Creation**: Create bounding boxes around detected ellipses for more accurate fitting.
-  2. **Model Inference**: Use the trained MobileNet V2 model to infer CCC markers from test images.
-  3. **Ellipse Fitting**: Apply ellipse fitting algorithms to detected contours, ensuring precise localization of the CCC markers.
-  4. **Centroid Calculation**: Calculate the center of the fitted ellipses for accurate pose estimation.
+  
+We have all the dots now just need to connect everything.
+  - **Contour Detection:** cv2.findContours for edge image.
+  - **Bounding Box Calculation:** cv2.boundingRect for contours.
+  - **Image Cropping:** ROIs Cropped from bounding boxes.
+  - **Resizing:** 128x128 pixels with zero padding if needed.
+  - **Normalization:** Range [0, 1].
+  - **Batch Preparation:** Batch Size 32
+  - **Model Inference:** Threshold e.g., 0.5 for ellipse detection.
+  - **Filtering:** Retain boxes containing ellipses
 
-> **Image example**: Example of detected CCC markers and their centroids.
-> ![Marker Detection Example](images/marker_detection_sample.png)
+
+> **Image example**: An overview steps mentioned above.
+> ![Marker Detection Example](images/filter.png)
 
 ---
 
