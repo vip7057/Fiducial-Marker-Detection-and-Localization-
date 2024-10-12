@@ -36,12 +36,24 @@ The following steps outline the methodology used to enhance the robustness and a
 
 ---
 
-### 2.2 Image Preprocessing and Feature Extraction
-- **Objective**: Prepare the synthetic images for feature extraction by applying image preprocessing techniques.
-- **Steps**:
-  1. **Grayscale Conversion**: Convert images to grayscale to reduce complexity.
-  2. **Edge Detection**: Use the **Canny edge detection** algorithm to detect edges in the image, highlighting key features of the ellipses.
-  3. **Contour Extraction**: Perform hierarchical contour analysis to establish parent-child relationships between contours, which is essential for ellipse detection.
+### 2.2 Synthetic Dataset Generation
+
+- **Contour Classification:**
+  -Filtering might still leave some noise contours.
+  -A CNN model classifies contours as CCC markers or not.
+
+> **Image example**: Contour image containing CCC-marker and noisy features.
+> ![Contours](images/feature_extraction.png)
+
+- **Why CNNs?:**
+  -Merely using image processing does not achieve the desired robustness.
+  -DNNs offer a more robust option to further refine features and improve accuracy.
+
+- **Synthetic Dataset Generation:**
+  -Generates synthetic dataset imitating CCC marker contours.
+  -Saves time and computation by avoiding the preprocessing of thousands of real images(also hard to acquire).
+  -Enables efficient model training and robust feature extraction.
+
 
 > **Image example**: Processed image after applying Canny edge detection.
 > ![Edge Detection Example](images/edge_detection_sample.png)
