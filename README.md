@@ -112,15 +112,9 @@ We have all the dots now just need to connect everything.
 
 ## 3. Results and Evaluations
 
-### 3.1 Robustness Analysis
-- The method was tested on various challenging scenarios, such as varying brightness, noise, and marker imperfections. The detection accuracy remained consistent and reliable across all test cases.
+> ![results](images/results.png)
+---
 
-### 3.2 Accuracy Analysis
-- **Mean Average Precision (mAP)**: The model achieved a high mAP score of **XX%**, reflecting its capability to accurately detect and classify CCC markers.
-- **Pose Estimation Accuracy**: The centroid calculation of ellipses achieved an accuracy of **XX mm**, making it suitable for high-precision industrial tasks.
-
-> **Image example**: Graph showing detection accuracy across varying noise levels.
-> ![Accuracy Analysis](images/accuracy_graph.png)
 
 ---
 
