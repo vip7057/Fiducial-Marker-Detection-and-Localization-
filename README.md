@@ -39,8 +39,8 @@ The following steps outline the methodology used to enhance the robustness and a
 ### 2.2 Synthetic Dataset Generation
 
 - **Contour Classification:**
-  -Filtering might still leave some noise contours.
-  -A CNN model classifies contours as CCC markers or not.
+  - Filtering might still leave some noise contours.
+  - A CNN model classifies contours as CCC markers or not.
 
 > **Image example**: Contour image containing CCC-marker and noisy features.
 > ![Contours](images/noise_ccc.png)
@@ -55,8 +55,9 @@ The following steps outline the methodology used to enhance the robustness and a
   -Enables efficient model training and robust feature extraction.
 
 
-> **Image example**: Samples of synthetic images generated for training.
+> **Image example**: Samples of synthetic images generated for training - positive class.
 > ![pos](images/syn_p.png)
+> **Image example**: Samples of synthetic images generated for training - negative class.
 > ![neg](images/syn_n.png)
 
 ---
