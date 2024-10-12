@@ -16,20 +16,20 @@ The following steps outline the methodology used to enhance the robustness and a
 ### 2.1 Image Preprocessing and Feature Extraction
 
 - **Canny Edge Detection:**
-  -Apply Canny edge detection algorithm (cv2.Canny).
-  -Identifies regions of high gradient intensity (object boundaries).
+  - Apply Canny edge detection algorithm (cv2.Canny).
+  - Identifies regions of high gradient intensity (object boundaries).
 
 - **Contour Detection:**
-  -Extract contours using cv2.findContours.
-  -Retrieves continuous curves tracing the boundaries.
+  - Extract contours using cv2.findContours.
+  - Retrieves continuous curves tracing the boundaries.
 
 - **Contour Filtering:**
-  -Purge contours that are too small or too large compared to the average contour size.
-  -Filter contours based on aspect ratios.
+  - Purge contours that are too small or too large compared to the average contour size.
+  - Filter contours based on aspect ratios.
 
 - **Hierarchy Analysis:**
-  -Analyze contour hierarchies to identify parent-child relationships.
-  -Crucial for accurately detecting CCC markers.
+  - Analyze contour hierarchies to identify parent-child relationships.
+  - Crucial for accurately detecting CCC markers.
 
 > **Image example**: Processed image after feature extraction.
 > ![Features](images/feature_extraction.png)
@@ -46,17 +46,18 @@ The following steps outline the methodology used to enhance the robustness and a
 > ![Contours](images/noise_ccc.png)
 
 - **Why CNNs?:**
-  -Merely using image processing does not achieve the desired robustness.
-  -DNNs offer a more robust option to further refine features and improve accuracy.
+  - Merely using image processing does not achieve the desired robustness.
+  - DNNs offer a more robust option to further refine features and improve accuracy.
 
 - **Synthetic Dataset Generation:**
-  -Generates synthetic dataset imitating CCC marker contours.
-  -Saves time and computation by avoiding the preprocessing of thousands of real images(also hard to acquire).
-  -Enables efficient model training and robust feature extraction.
+  - Generates synthetic dataset imitating CCC marker contours.
+  - Saves time and computation by avoiding the preprocessing of thousands of real images(also hard to acquire).
+  - Enables efficient model training and robust feature extraction.
 
 
 > **Image example**: Samples of synthetic images generated for training - positive class.
 > ![pos](images/syn_p.png)
+
 > **Image example**: Samples of synthetic images generated for training - negative class.
 > ![neg](images/syn_n.png)
 
