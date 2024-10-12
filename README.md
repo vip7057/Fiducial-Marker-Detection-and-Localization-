@@ -13,7 +13,7 @@ The following steps outline the methodology used to enhance the robustness and a
 
 > ![Workflow](images/Plot.png)
 
-### 2.2 Image Preprocessing and Feature Extraction
+### 2.1 Image Preprocessing and Feature Extraction
 
 - **Canny Edge Detection:**
   -Apply Canny edge detection algorithm (cv2.Canny).
@@ -31,8 +31,8 @@ The following steps outline the methodology used to enhance the robustness and a
   -Analyze contour hierarchies to identify parent-child relationships.
   -Crucial for accurately detecting CCC markers.
 
-> **Image example**: Below is a sample synthetic image with ellipses generated for training.
-> ![Synthetic Data Example](images/synthetic_data_sample.png)
+> **Image example**: Processed image after feature extraction.
+> ![Features](images/feature_extraction.png)
 
 ---
 
