@@ -32,6 +32,7 @@ The following steps outline the methodology used to enhance the robustness and a
   - Crucial for accurately detecting CCC markers.
 
 > **Image example**: Processed image after feature extraction.
+> 
 > ![Features](images/feature_extraction.png)
 
 ---
