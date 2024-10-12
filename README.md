@@ -16,44 +16,70 @@ The following steps outline the methodology used to enhance the robustness and a
 ### 2.1 Image Preprocessing and Feature Extraction
 
 - **Canny Edge Detection:**
-  -Apply Canny edge detection algorithm (cv2.Canny).
-  -Identifies regions of high gradient intensity (object boundaries).
+  - Apply Canny edge detection algorithm (cv2.Canny).
+  - Identifies regions of high gradient intensity (object boundaries).
 
 - **Contour Detection:**
-  -Extract contours using cv2.findContours.
-  -Retrieves continuous curves tracing the boundaries.
+  - Extract contours using cv2.findContours.
+  - Retrieves continuous curves tracing the boundaries.
 
 - **Contour Filtering:**
-  -Purge contours that are too small or too large compared to the average contour size.
-  -Filter contours based on aspect ratios.
+  - Purge contours that are too small or too large compared to the average contour size.
+  - Filter contours based on aspect ratios.
 
 - **Hierarchy Analysis:**
-  -Analyze contour hierarchies to identify parent-child relationships.
-  -Crucial for accurately detecting CCC markers.
+  - Analyze contour hierarchies to identify parent-child relationships.
+  - Crucial for accurately detecting CCC markers.
 
 > **Image example**: Processed image after feature extraction.
+> 
 > ![Features](images/feature_extraction.png)
 
 ---
 
-### 2.2 Image Preprocessing and Feature Extraction
-- **Objective**: Prepare the synthetic images for feature extraction by applying image preprocessing techniques.
-- **Steps**:
-  1. **Grayscale Conversion**: Convert images to grayscale to reduce complexity.
-  2. **Edge Detection**: Use the **Canny edge detection** algorithm to detect edges in the image, highlighting key features of the ellipses.
-  3. **Contour Extraction**: Perform hierarchical contour analysis to establish parent-child relationships between contours, which is essential for ellipse detection.
+### 2.2 Synthetic Dataset Generation
 
-> **Image example**: Processed image after applying Canny edge detection.
-> ![Edge Detection Example](images/edge_detection_sample.png)
+- **Contour Classification:**
+  - Filtering might still leave some noise contours.
+  - A CNN model classifies contours as CCC markers or not.
+
+> **Image example**: Contour image containing CCC-marker and noisy features.
+> ![Contours](images/noise_ccc.png)
+
+- **Why CNNs?:**
+  - Merely using image processing does not achieve the desired robustness.
+  - DNNs offer a more robust option to further refine features and improve accuracy.
+
+- **Synthetic Dataset Generation:**
+  - Generates synthetic dataset imitating CCC marker contours.
+  - Saves time and computation by avoiding the preprocessing of thousands of real images(also hard to acquire).
+  - Enables efficient model training and robust feature extraction.
+
+
+> **Image example**: Samples of synthetic images generated for training - positive class.
+> ![pos](images/syn_p.png)
+
+> **Image example**: Samples of synthetic images generated for training - negative class.
+> ![neg](images/syn_n.png)
 
 ---
 
 ### 2.3 MobileNet V2 for Image Classification
-- **Objective**: Detect and classify CCC markers using a CNN model (MobileNet V2).
-- **Steps**:
-  1. **Model Selection**: MobileNet V2 was chosen for its lightweight architecture, making it suitable for deployment on resource-constrained devices.
-  2. **Transfer Learning**: Pre-trained MobileNet V2 is fine-tuned using the synthetic dataset. Transfer learning improves the model’s accuracy without requiring large amounts of real-world data.
-  3. **Training Procedure**: Train the model on the synthetic data, using evaluation metrics such as **mean average precision (mAP)** and **accuracy** to measure its performance.
+- **Architecture:**
+  - Efficient: Depth-wise separable convolutions.
+  - Resource-Constrained: Ideal for limited hardware.
+
+- **Transfer Learning:**
+  - Fine-Tuning: Pre-trained on ImageNet.
+  - Issue: Initial overfitting; final fix: Unfreeze only top layers.
+
+- **Training:**
+  - Preprocessing: RGB, 128x128 pixels, normalization.
+  - Model: Added global average pooling, dense layers.
+  - Loss & Optimizer: Binary cross-entropy, Adam.
+
+> MobileNet V2 Architecture.(https://doi.org/10.48550/arXiv.1801.04381)
+> ![mbnetv2](images/arch.png)
 
 ---
 
