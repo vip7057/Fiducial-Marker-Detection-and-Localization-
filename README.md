@@ -100,6 +100,11 @@ We have all the dots now just need to connect everything.
 > **Image example**: An overview steps mentioned above.
 > ![Marker Detection Example](images/filter.png)
 
+
+- **Ellipse fitting and localization:**
+> An overview steps invlolved in ellipse fitiing and localization.
+> ![Fitting](images/fitting.png)
+- 
 ---
 
 ## 3. Results and Evaluations
