@@ -1,4 +1,5 @@
 # Increasing the Robustness and Accuracy of CCC Marker Detection under Challenging Conditions
+> ![Features](images/result_6.png)
 
 ## 1. Problem Statement
 
