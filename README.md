@@ -13,12 +13,23 @@ The following steps outline the methodology used to enhance the robustness and a
 
 > ![Workflow](Plot.png)
 
-### 2.1 Synthetic Data Generation
-- **Objective**: Generate a dataset of synthetic images containing ellipses (representing CCC markers) to train the detection model in scenarios where real-world data is scarce.
-- **Steps**:
-  - Generate images with varying marker sizes, orientations, and positions.
-  - Apply **random transformations** and **noise injection** to simulate realistic industrial conditions and improve the model’s robustness.
-  - Split data into **positive class** (ellipses) and **negative class** (non-ellipses).
+### 2.1 Image Preprocessing and Feature Extraction
+
+-**Canny Edge Detection:**
+  -Apply Canny edge detection algorithm (cv2.Canny).
+  -Identifies regions of high gradient intensity (object boundaries).
+
+-**Contour Detection:**
+  -Extract contours using cv2.findContours.
+  -Retrieves continuous curves tracing the boundaries.
+
+-**Contour Filtering:**
+  -Purge contours that are too small or too large compared to the average contour size.
+  -Filter contours based on aspect ratios.
+
+-**Hierarchy Analysis:**
+  -Analyze contour hierarchies to identify parent-child relationships.
+  -Crucial for accurately detecting CCC markers.
 
 > **Image example**: Below is a sample synthetic image with ellipses generated for training.
 > ![Synthetic Data Example](images/synthetic_data_sample.png)
