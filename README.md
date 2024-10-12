@@ -98,7 +98,7 @@ The following steps outline the methodology used to enhance the robustness and a
 
 
 > **Image example**: The steps mentioned above.
-> ![Marker Detection Example](images/marker_detection_sample.png)
+> ![Marker Detection Example](images/filter.png)
 
 ---
 
