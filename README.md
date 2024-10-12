@@ -11,23 +11,23 @@ To address these issues, this project presents a **novel methodology** that comb
 
 The following steps outline the methodology used to enhance the robustness and accuracy of CCC marker detection:
 
-> ![Workflow](Plot.png)
+> ![Workflow](images/Plot.png)
 
-### 2.1 Image Preprocessing and Feature Extraction
+### 2.2 Image Preprocessing and Feature Extraction
 
--**Canny Edge Detection:**
+- **Canny Edge Detection:**
   -Apply Canny edge detection algorithm (cv2.Canny).
   -Identifies regions of high gradient intensity (object boundaries).
 
--**Contour Detection:**
+- **Contour Detection:**
   -Extract contours using cv2.findContours.
   -Retrieves continuous curves tracing the boundaries.
 
--**Contour Filtering:**
+- **Contour Filtering:**
   -Purge contours that are too small or too large compared to the average contour size.
   -Filter contours based on aspect ratios.
 
--**Hierarchy Analysis:**
+- **Hierarchy Analysis:**
   -Analyze contour hierarchies to identify parent-child relationships.
   -Crucial for accurately detecting CCC markers.
 
