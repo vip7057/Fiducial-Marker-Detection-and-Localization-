@@ -78,7 +78,7 @@ The following steps outline the methodology used to enhance the robustness and a
   - Model: Added global average pooling, dense layers.
   - Loss & Optimizer: Binary cross-entropy, Adam.
 
-> MobileNet V2 Architecture.
+> MobileNet V2 Architecture.(https://doi.org/10.48550/arXiv.1801.04381)
 > ![mbnetv2](images/arch.png)
 
 ---
