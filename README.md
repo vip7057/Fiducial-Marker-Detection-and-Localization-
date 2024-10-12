@@ -43,7 +43,7 @@ The following steps outline the methodology used to enhance the robustness and a
   -A CNN model classifies contours as CCC markers or not.
 
 > **Image example**: Contour image containing CCC-marker and noisy features.
-> ![Contours](images/feature_extraction.png)
+> ![Contours](images/noise_ccc.png)
 
 - **Why CNNs?:**
   -Merely using image processing does not achieve the desired robustness.
@@ -55,8 +55,9 @@ The following steps outline the methodology used to enhance the robustness and a
   -Enables efficient model training and robust feature extraction.
 
 
-> **Image example**: Processed image after applying Canny edge detection.
-> ![Edge Detection Example](images/edge_detection_sample.png)
+> **Image example**: Samples of synthetic images generated for training.
+> ![pos](images/syn_p.png)
+> ![neg](images/syn_n.png)
 
 ---
 
