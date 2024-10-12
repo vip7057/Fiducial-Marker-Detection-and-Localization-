@@ -106,7 +106,7 @@ We have all the dots now just need to connect everything.
 > ![Fitting](images/fitting.png)
 
 > ***Image Example:** Centroid calculations.
-> ![Fitting](images/centers.png)
+> ![Fitting](images/center.png)
 ---
 
 ## 3. Results and Evaluations
