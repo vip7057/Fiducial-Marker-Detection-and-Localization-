@@ -103,7 +103,7 @@ We have all the dots now just need to connect everything.
 
 
 - **Ellipse fitting and localization:**
-> An overview steps invlolved in ellipse fitiing and localization.
+> An overview of the steps invlolved in ellipse fitiing and localization.
 > ![Fitting](images/fitting.png)
 
 > ***Image Example:** Centroid calculations.
